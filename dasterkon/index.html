@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Даамдуу Дасторкон — ресторан</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container nav">
+    <a href="#home" class="logo">🍽️ Даамдуу <span>Дасторкон</span></a>
+    <nav class="menu-links" id="navLinks">
+      <a href="#home">Башкы бет</a>
+      <a href="#menu">Меню</a>
+      <a href="#about">Биз жөнүндө</a>
+      <a href="#contact">Байланыш</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="cart-btn" id="cartBtn" aria-label="Себет">🛒<span class="badge" id="cartCount">0</span></button>
+      <button class="burger" id="burger" aria-label="Меню">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <p class="eyebrow">Кыргыз · Өзбек · Пакистан ашканалары</p>
+    <h1>Даамдуу тамактар — <span>жылуу маанай</span></h1>
+    <p class="hero-text">Даамдуу Дасторкон — үч ашканынын эң мыкты даамдарын бир дасторконго жыйнаган заманбап ресторан.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn btn-gold">Менюну көрүү</a>
+      <button class="btn btn-outline" id="heroOrder">Заказ берүү</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="menu">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Биздин меню</h2>
+      <div class="line"></div>
+    </div>
+    <div class="search-box reveal">
+      <input type="search" id="searchInput" placeholder="🔍 Тамактын атын жазыңыз... (мис: Манты)">
+    </div>
+    <div class="filters reveal" id="filters">
+      <button class="filter active" data-cat="all">Баары</button>
+      <button class="filter" data-cat="kyrgyz">🇰🇬 Кыргыз</button>
+      <button class="filter" data-cat="uzbek">🇺🇿 Өзбек</button>
+      <button class="filter" data-cat="pakistan">🇵🇰 Пакистан</button>
+      <button class="filter" data-cat="salad">🥗 Салаттар</button>
+      <button class="filter" data-cat="drink">🥤 Суусундуктар</button>
+      <button class="filter" data-cat="dessert">🍰 Десерттер</button>
+    </div>
+    <div class="grid" id="menuGrid"></div>
+    <p class="empty" id="emptyMsg" hidden>Эч нерсе табылган жок 😔</p>
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div class="reveal">
+      <h2>Биз жөнүндө</h2>
+      <div class="line left"></div>
+      <p>Даамдуу Дасторкон — кыргыз, өзбек жана пакистан ашканаларынын даамдарын бир жерге топтогон заманбап ресторан. Биз ата-бабалардан калган рецептерди бүгүнкү сапат менен айкалыштырабыз.</p>
+    </div>
+    <div class="features">
+      <div class="feature reveal"><span>🌿</span><h3>Жаңы азыктар</h3><p>Күн сайын жаңы продуктылар</p></div>
+      <div class="feature reveal"><span>👨‍🍳</span><h3>Тажрыйбалуу ашпозчулар</h3><p>Ар бир ашкананын устаты</p></div>
+      <div class="feature reveal"><span>⚡</span><h3>Тез тейлөө</h3><p>Заказ тез даярдалат</p></div>
+      <div class="feature reveal"><span>👨‍👩‍👧</span><h3>Үй-бүлөлүк атмосфера</h3><p>Жылуу жана жайлуу чөйрө</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head reveal"><h2>Байланыш</h2><div class="line"></div></div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <p>📍 <b>Дарек:</b> Бишкек шаары, Чүй проспектиси 100</p>
+        <p>📞 <b>Телефон:</b> +996 555 123 456</p>
+        <p>🕐 <b>Иштөө убактысы:</b> Күн сайын 10:00 – 23:00</p>
+        <p>📸 <b>Instagram:</b> <a href="#" target="_blank">@daamduu_dasterkon</a></p>
+        <p>💬 <b>WhatsApp:</b> <a href="#" target="_blank">+996 555 123 456</a></p>
+      </div>
+      <div class="map reveal">🗺️ Google Maps картасы<br><small>(бул жерге карта кошулат)</small></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Даамдуу Дасторкон. Бардык укуктар корголгон.</p>
+</footer>
+
+<!-- Себет -->
+<div class="overlay" id="overlay"></div>
+<aside class="cart" id="cart">
+  <div class="cart-head"><h3>🛒 Себет</h3><button class="close" data-close>✕</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="total">Жалпы: <b id="cartTotal">0 сом</b></div>
+    <button class="btn btn-gold full" id="checkoutBtn">Заказ берүү</button>
+  </div>
+</aside>
+
+<!-- Тамак modal -->
+<div class="modal" id="detailModal">
+  <div class="modal-box detail">
+    <button class="close" data-close>✕</button>
+    <div id="detailContent"></div>
+  </div>
+</div>
+
+<!-- Заказ modal -->
+<div class="modal" id="orderModal">
+  <div class="modal-box">
+    <button class="close" data-close>✕</button>
+    <h3>Заказ берүү</h3>
+    <form id="orderForm" novalidate>
+      <label>Аты-жөнү<input type="text" id="fName" placeholder="Айбек Асанов"><small class="err"></small></label>
+      <label>Телефон номери<input type="tel" id="fPhone" placeholder="+996 555 123 456"><small class="err"></small></label>
+      <label>Дарек<input type="text" id="fAddress" placeholder="Көчө, үй, батир"><small class="err"></small></label>
+      <label>Заказга комментарий<textarea id="fComment" rows="2"></textarea></label>
+      <label>Төлөм түрү
+        <select id="fPay">
+          <option>Накталай</option><option>Карта</option><option>Онлайн төлөм</option>
+        </select>
+      </label>
+      <button type="submit" class="btn btn-gold full">Заказды ырастоо</button>
+    </form>
+  </div>
+</div>
+
+<!-- Success -->
+<div class="modal" id="successModal">
+  <div class="modal-box success">
+    <div class="check">✓</div>
+    <h3>Заказыңыз кабыл алынды! Рахмат.</h3>
+    <button class="btn btn-gold" data-close>Жабуу</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
